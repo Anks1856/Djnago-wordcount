@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>count</title>
+</head>
+<body>
+
+<h1>count of Words in your text is {{ count }}</h1>
+<h3>your text is ....</h3>
+<h4>{{ fulltext }}</h4>
+
+<h1>Most Repeated word is:</h1>
+{% for word,times in higherwords %}
+
+     {% if forloop.first%}
+        {{word}}
+        <br>
+        {{times}}
+         <br>
+     {% endif%}
+{% endfor%}
+<h1>Biggest Word is:</h1>
+{% for word,times in bigword %}
+
+     {% if forloop.first%}
+        {{word}}
+        <br>
+        {{times}}
+         <br>
+     {% endif%}
+     {% if forloop.last%}
+<h1>Smallest word is:</h1>
+      {{word}}
+        <br>
+      {{times}}
+        <br>
+     {% endif %}
+{% endfor%}
+
+<h4><a href="{% url 'home'%}">BACK</a></h4>
+</body>
+</html>
